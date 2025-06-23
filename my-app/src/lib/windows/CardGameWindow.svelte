@@ -11,13 +11,11 @@
 	const cardValues = ['🎮', '🎯', '🎨', '🎵', '🎲', '🃏', '🎪', '🎭'];
 
 	function initializeGame() {
-		// Create pairs of cards
 		const cardPairs = cardValues.flatMap(value => [
 			{ value, flipped: false, matched: false },
 			{ value, flipped: false, matched: false }
 		]);
 		
-		// Shuffle cards
 		cards = cardPairs
 			.sort(() => Math.random() - 0.5)
 			.map((card, index) => ({ ...card, id: index }));
@@ -29,7 +27,6 @@
 		timeElapsed = 0;
 		flippedCards = [];
 		
-		// Start timer
 		gameTimer = setInterval(() => {
 			timeElapsed++;
 		}, 1000);
@@ -55,7 +52,6 @@
 			cards[second].matched = true;
 			score += 10;
 			
-			// Check if game is won
 			if (cards.every(card => card.matched)) {
 				gameWon = true;
 				if (gameTimer) {
@@ -69,7 +65,7 @@
 		}
 		
 		flippedCards = [];
-		cards = [...cards]; // Trigger reactivity
+		cards = [...cards];
 	}
 
 	function resetGame() {

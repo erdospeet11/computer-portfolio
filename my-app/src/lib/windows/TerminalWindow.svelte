@@ -35,12 +35,10 @@
 		const args = trimmedCommand.split(' ');
 		const cmd = args[0];
 
-		// Add command to history
 		history = [...history, { type: 'command', content: `${currentDirectory} ${command}` }];
 		
-		// Add to command history for arrow key navigation
 		if (command.trim()) {
-			commandHistory = [command, ...commandHistory.slice(0, 49)]; // Keep last 50 commands
+			commandHistory = [command, ...commandHistory.slice(0, 49)];
 		}
 		historyIndex = -1;
 
@@ -128,7 +126,6 @@ ${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}           
 			case 'calc':
 				const expression = args.slice(1).join('');
 				try {
-					// Simple calculation - only allow basic operations for security
 					const sanitized = expression.replace(/[^0-9+\-*/().]/g, '');
 					if (sanitized !== expression) {
 						output = 'Error: Only numbers and basic operators (+, -, *, /, parentheses) are allowed.';
@@ -167,12 +164,10 @@ Type 'help' to see all available commands.`;
 				break;
 
 			case 'exit':
-				// In a real implementation, this would close the window
 				output = 'Terminal session ended. You can close this window.';
 				break;
 
 			case '':
-				// Empty command, just show new prompt
 				break;
 
 			default:
@@ -231,13 +226,6 @@ Type 'help' to see all available commands.`;
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div class="terminal-window" on:click={focusInput}>
-	<div class="terminal-header">
-		<div class="header-info">
-			<span class="terminal-title">⌨️ Command Prompt</span>
-			<span class="terminal-path">C:\Users\Portfolio</span>
-		</div>
-	</div>
-	
 	<div class="terminal-content" bind:this={terminal}>
 		{#each history as entry}
 			<div class="terminal-line {entry.type}">
@@ -267,8 +255,8 @@ Type 'help' to see all available commands.`;
 <style>
 	.terminal-window {
 		height: 100%;
-		background: #0c0c0c;
-		color: #cccccc;
+		background: #000000;
+		color: #00ff00;
 		font-family: 'Consolas', 'Courier New', monospace;
 		font-size: 14px;
 		line-height: 1.4;
@@ -316,18 +304,18 @@ Type 'help' to see all available commands.`;
 	}
 
 	.terminal-line.command .prompt-text {
-		color: #ffffff;
+		color: #00ff00;
 	}
 
 	.terminal-line.output .output-text {
-		color: #cccccc;
+		color: #00ff00;
 		margin: 0;
 		white-space: pre-wrap;
 		font-family: inherit;
 	}
 
 	.terminal-line.error .output-text {
-		color: #ff6b6b;
+		color: #ff4444;
 	}
 
 	.terminal-line.current {
@@ -336,7 +324,7 @@ Type 'help' to see all available commands.`;
 	}
 
 	.prompt {
-		color: #ffffff;
+		color: #00ff00;
 		white-space: nowrap;
 		margin-right: 4px;
 	}
@@ -344,7 +332,7 @@ Type 'help' to see all available commands.`;
 	.terminal-input {
 		background: transparent;
 		border: none;
-		color: #cccccc;
+		color: #00ff00;
 		font-family: inherit;
 		font-size: inherit;
 		outline: none;
@@ -353,7 +341,7 @@ Type 'help' to see all available commands.`;
 	}
 
 	.cursor {
-		color: #cccccc;
+		color: #00ff00;
 		animation: blink 1s infinite;
 		margin-left: 2px;
 	}
@@ -363,7 +351,6 @@ Type 'help' to see all available commands.`;
 		51%, 100% { opacity: 0; }
 	}
 
-	/* Scrollbar styling */
 	.terminal-content::-webkit-scrollbar {
 		width: 8px;
 	}

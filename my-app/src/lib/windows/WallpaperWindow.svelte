@@ -51,7 +51,6 @@
 	}
 
 	function resetPreview() {
-		// For now, just keep the selected wallpaper
 	}
 </script>
 

@@ -15,27 +15,31 @@
 		height: number;
 		minimized: boolean;
 		zIndex: number;
+		props?: any;
 	}> = [];
 	
 	let maxZIndex = 100;
 	let startMenuOpen = false;
-	let currentWallpaper = 'nature'; // Default wallpaper
-	let selectedIconId: string | null = null; // Track selected icon
+	let currentWallpaper = 'nature';
+	let selectedIconId: string | null = null;
 
-	// Desktop icons configuration
-	const desktopIcons = [
+	let desktopIcons = [
 		{ id: 'about', name: 'About Me', icon: '👤', x: 50, y: 50 },
 		{ id: 'projects', name: 'Projects', icon: '📁', x: 50, y: 150 },
 		{ id: 'cards', name: 'Card Game', icon: '🃏', x: 50, y: 250 },
 		{ id: 'contact', name: 'Contact', icon: '📧', x: 50, y: 350 },
-		{ id: 'resume', name: 'Resume', icon: '📄', x: 50, y: 450 },
+		{ id: 'resume', name: 'Resume', icon: '📕', x: 50, y: 450 },
 		{ id: 'wallpaper', name: 'Wallpaper', icon: '🖼️', x: 50, y: 550 },
 		{ id: 'terminal', name: 'Terminal', icon: '⌨️', x: 150, y: 50 },
-		{ id: 'cube', name: '3D Cube', icon: '🎲', x: 150, y: 150 }
+		{ id: 'cube', name: '3D Cube', icon: '🎲', x: 150, y: 150 },
+		{ id: 'explorer', name: 'File Explorer', icon: '📂', x: 150, y: 250 },
+		{ id: 'image1', name: 'Landscape.svg', icon: '🖼️', x: 250, y: 50 },
+		{ id: 'image2', name: 'Abstract.svg', icon: '🎨', x: 250, y: 150 },
+		{ id: 'image3', name: 'Geometric.svg', icon: '🔷', x: 250, y: 250 },
+		{ id: 'secret', name: 'secret.txt', icon: '📄', x: 1200, y: 600 }
 	];
 
 	onMount(() => {
-		// Update time every second
 		const updateTime = () => {
 			const now = new Date();
 			currentTime = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -43,21 +47,25 @@
 		updateTime();
 		const timeInterval = setInterval(updateTime, 1000);
 
+		const secretIcon = desktopIcons.find(icon => icon.id === 'secret');
+		if (secretIcon) {
+			secretIcon.x = window.innerWidth - 130;
+			secretIcon.y = window.innerHeight - 180;
+			desktopIcons = [...desktopIcons];
+		}
+
 		return () => clearInterval(timeInterval);
 	});
 
-	function openWindow(id: string, title: string, component: string) {
-		// Check if window is already open
+	function openWindow(id: string, title: string, component: string, props: any = {}) {
 		const existingWindow = openWindows.find(w => w.id === id);
 		if (existingWindow) {
-			// Bring to front and unminimize
 			existingWindow.minimized = false;
 			existingWindow.zIndex = ++maxZIndex;
 			openWindows = [...openWindows];
 			return;
 		}
 
-		// Create new window
 		const newWindow = {
 			id,
 			title,
@@ -67,7 +75,8 @@
 			width: 600,
 			height: 400,
 			minimized: false,
-			zIndex: ++maxZIndex
+			zIndex: ++maxZIndex,
+			props
 		};
 
 		openWindows = [...openWindows, newWindow];
@@ -94,7 +103,7 @@
 	}
 
 	function handleIconDoubleClick(iconId: string) {
-		const iconMap: { [key: string]: { title: string; component: string } } = {
+		const iconMap: { [key: string]: { title: string; component: string; props?: any } } = {
 			about: { title: 'About Me', component: 'AboutWindow' },
 			projects: { title: 'Projects', component: 'ProjectsWindow' },
 			cards: { title: 'Card Game', component: 'CardGameWindow' },
@@ -102,12 +111,33 @@
 			resume: { title: 'Resume', component: 'ResumeWindow' },
 			wallpaper: { title: 'Wallpaper Settings', component: 'WallpaperWindow' },
 			terminal: { title: 'Command Prompt', component: 'TerminalWindow' },
-			cube: { title: '3D Cube Viewer', component: 'CubeWindow' }
+			cube: { title: '3D Cube Viewer', component: 'CubeWindow' },
+			explorer: { title: 'File Explorer', component: 'FileExplorerWindow' },
+			image1: { 
+				title: 'Landscape.svg', 
+				component: 'ImageWindow', 
+				props: { imageSrc: '/images/sample1.svg', imageName: 'Landscape.svg' }
+			},
+			image2: { 
+				title: 'Abstract.svg', 
+				component: 'ImageWindow', 
+				props: { imageSrc: '/images/sample2.svg', imageName: 'Abstract.svg' }
+			},
+			image3: { 
+				title: 'Geometric.svg', 
+				component: 'ImageWindow', 
+				props: { imageSrc: '/images/sample3.svg', imageName: 'Geometric.svg' }
+			},
+			secret: {
+				title: 'secret.txt',
+				component: 'TextWindow',
+				props: { textContent: 'If you find this secret, go to the terminal and type "cat secret.txt" to see the secret.', fileName: 'secret.txt', readonly: true }
+			}
 		};
 
 		const config = iconMap[iconId];
 		if (config) {
-			openWindow(iconId, config.title, config.component);
+			openWindow(iconId, config.title, config.component, config.props);
 		}
 	}
 
@@ -115,18 +145,15 @@
 		startMenuOpen = !startMenuOpen;
 	}
 
-	// Close start menu and deselect icons when clicking elsewhere
 	function handleDesktopClick() {
 		startMenuOpen = false;
-		selectedIconId = null; // Deselect any selected icon
+		selectedIconId = null;
 	}
 
-	// Handle icon selection
 	function handleIconClick(iconId: string) {
 		selectedIconId = iconId;
 	}
 
-	// Handle wallpaper change
 	function handleWallpaperChange(event: CustomEvent<string>) {
 		currentWallpaper = event.detail;
 	}
@@ -153,6 +180,7 @@
 		{#if !window.minimized}
 			<Window
 				{...window}
+				props={window.props || {}}
 				on:close={() => closeWindow(window.id)}
 				on:minimize={() => minimizeWindow(window.id)}
 				on:focus={() => bringToFront(window.id)}
@@ -181,9 +209,9 @@
 				openWindows = [...openWindows];
 			}
 		}}
-		on:openApp={(e: CustomEvent<{id: string, title: string, component: string}>) => {
-			const { id, title, component } = e.detail;
-			openWindow(id, title, component);
+		on:openApp={(e: CustomEvent<{id: string, title: string, component: string, props?: any}>) => {
+			const { id, title, component, props } = e.detail;
+			openWindow(id, title, component, props);
 		}}
 	/>
 </div>

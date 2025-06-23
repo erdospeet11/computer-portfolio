@@ -7,12 +7,11 @@
 
 	async function handleSubmit() {
 		isSubmitting = true;
-		// Simulate form submission
+
 		await new Promise(resolve => setTimeout(resolve, 1000));
 		isSubmitted = true;
 		isSubmitting = false;
 		
-		// Reset form after 3 seconds
 		setTimeout(() => {
 			name = '';
 			email = '';
@@ -25,7 +24,7 @@
 <div class="contact-window">
 	<div class="header">
 		<h1>Get In Touch</h1>
-		<p>Let's discuss your next project or collaboration opportunity</p>
+		<p>Let's have a chat if you have any questions or just want to say hi!</p>
 	</div>
 
 	<div class="contact-content">
@@ -35,31 +34,29 @@
 				<span class="icon">📧</span>
 				<div>
 					<strong>Email</strong>
-					<p>john.doe@example.com</p>
+					<p>erdospepe9@gmail.com</p>
 				</div>
 			</div>
 			<div class="info-item">
 				<span class="icon">📱</span>
 				<div>
 					<strong>Phone</strong>
-					<p>+1 (555) 123-4567</p>
+					<p>+36 30 375 5716</p>
 				</div>
 			</div>
 			<div class="info-item">
 				<span class="icon">📍</span>
 				<div>
 					<strong>Location</strong>
-					<p>San Francisco, CA</p>
+					<p>Budapest, Hungary</p>
 				</div>
 			</div>
 
 			<div class="social-links">
 				<h3>Follow Me</h3>
 				<div class="social-grid">
-					<button class="social-btn linkedin">LinkedIn</button>
-					<button class="social-btn github">GitHub</button>
-					<button class="social-btn twitter">Twitter</button>
-					<button class="social-btn dribbble">Dribbble</button>
+					<a href="https://www.linkedin.com/in/erdospeterzs/" target="_blank" class="social-btn linkedin">LinkedIn</a>
+					<a href="https://github.com/erdospeet11" target="_blank" class="social-btn github">GitHub</a>
 				</div>
 			</div>
 		</div>
@@ -209,8 +206,6 @@
 
 	.linkedin { background: #0077b5; color: white; }
 	.github { background: #333; color: white; }
-	.twitter { background: #1da1f2; color: white; }
-	.dribbble { background: #ea4c89; color: white; }
 
 	.contact-form {
 		background: #f8f9fa;

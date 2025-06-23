@@ -1,12 +1,44 @@
+<script lang="ts">
+	import { browser } from '$app/environment';
+
+	let resumeContent: HTMLElement;
+
+	async function downloadPDF() {
+		if (!browser) return;
+		
+		try {
+			// @ts-ignore - html2pdf.js doesn't have official types and is dynamically imported
+			const html2pdf = await import('html2pdf.js');
+			const element = resumeContent;
+			const opt = {
+				margin: 1,
+				filename: 'John_Doe_Resume.pdf',
+				image: { type: 'jpeg', quality: 0.98 },
+				html2canvas: { scale: 2, useCORS: true },
+				jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+			};
+
+			html2pdf.default().set(opt).from(element).save();
+		} catch (error) {
+			console.error('Error generating PDF:', error);
+			alert('Sorry, there was an error generating the PDF. Please try the print option instead.');
+		}
+	}
+
+	function printResume() {
+		window.print();
+	}
+</script>
+
 <div class="resume-window">
 	<div class="resume-header">
 		<div class="header-actions">
-			<button class="action-btn">📄 Download PDF</button>
-			<button class="action-btn">🖨️ Print</button>
+			<button class="action-btn" on:click={downloadPDF}>📄 Download PDF</button>
+			<button class="action-btn" on:click={printResume}>🖨️ Print</button>
 		</div>
 	</div>
 
-	<div class="resume-content">
+	<div class="resume-content" bind:this={resumeContent}>
 		<header class="resume-header-section">
 			<h1>John Doe</h1>
 			<p class="title">Full Stack Developer</p>

@@ -28,20 +28,16 @@
 	});
 
 	function initThreeJS() {
-		// Scene
 		scene = new THREE.Scene();
 		scene.background = new THREE.Color(0x222222);
 
-		// Camera
 		camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
 		camera.position.z = 5;
 
-		// Renderer
 		renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
 		renderer.setSize(canvas.clientWidth, canvas.clientHeight);
 		renderer.setPixelRatio(window.devicePixelRatio);
 
-		// Cube geometry and material
 		const geometry = new THREE.BoxGeometry(2, 2, 2);
 		const material = new THREE.MeshPhongMaterial({ 
 			color: cubeColor,
@@ -50,15 +46,13 @@
 		cube = new THREE.Mesh(geometry, material);
 		scene.add(cube);
 
-		// Lighting
-		const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+		const ambientLight = new THREE.AmbientLight(0x404040, 0.8);
 		scene.add(ambientLight);
 
 		const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
 		directionalLight.position.set(5, 5, 5);
 		scene.add(directionalLight);
 
-		// Handle window resize
 		const handleResize = () => {
 			if (canvas && renderer && camera) {
 				const width = canvas.clientWidth;

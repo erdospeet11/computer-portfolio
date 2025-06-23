@@ -8,6 +8,9 @@
 	import WallpaperWindow from './windows/WallpaperWindow.svelte';
 	import TerminalWindow from './windows/TerminalWindow.svelte';
 	import CubeWindow from './windows/CubeWindow.svelte';
+	import ImageWindow from './windows/ImageWindow.svelte';
+	import TextWindow from './windows/TextWindow.svelte';
+	import FileExplorerWindow from './windows/FileExplorerWindow.svelte';
 
 	export let id: string;
 	export let title: string;
@@ -17,6 +20,7 @@
 	export let width: number;
 	export let height: number;
 	export let zIndex: number;
+	export let props: any = {};
 
 	const dispatch = createEventDispatcher();
 
@@ -37,7 +41,10 @@
 		ResumeWindow,
 		WallpaperWindow,
 		TerminalWindow,
-		CubeWindow
+		CubeWindow,
+		ImageWindow,
+		TextWindow,
+		FileExplorerWindow
 	};
 
 	function handleTitleBarMouseDown(event: MouseEvent) {
@@ -118,7 +125,7 @@
 	<!-- Window Content -->
 	<div class="window-content">
 		{#if components[component]}
-			<svelte:component this={components[component]} on:wallpaperChange />
+			<svelte:component this={components[component]} {...props} on:wallpaperChange />
 		{:else}
 			<div class="placeholder">
 				<h2>{title}</h2>

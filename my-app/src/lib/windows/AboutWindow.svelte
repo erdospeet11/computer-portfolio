@@ -2,9 +2,9 @@
 	<div class="profile-section">
 		<div class="avatar">👤</div>
 		<div class="info">
-			<h1>John Doe</h1>
-			<p class="title">Full Stack Developer</p>
-			<p class="location">📍 San Francisco, CA</p>
+			<h1>Erdős Péter Zsombor</h1>
+			<p class="title">Student</p>
+			<p class="location">📍 Budapest, Hungary</p>
 		</div>
 	</div>
 	
@@ -12,9 +12,8 @@
 		<section>
 			<h2>About Me</h2>
 			<p>
-				Welcome to my digital workspace! I'm a passionate full-stack developer with over 5 years of experience 
-				creating innovative web applications and user experiences. I love turning complex problems into simple, 
-				beautiful designs.
+				Welcome to my digital workspace! I'm a student at the University of Eötvös Loránd, Faculty of Informatics.
+				I'm interested in software development and game development.
 			</p>
 		</section>
 
@@ -35,16 +34,16 @@
 		<section>
 			<h2>Experience</h2>
 			<div class="experience-item">
-				<h3>Senior Frontend Developer</h3>
-				<p class="company">Tech Solutions Inc. • 2022 - Present</p>
-				<p>Leading frontend development for enterprise applications using React and TypeScript.</p>
+			  <h3>Digital Solutions Intern</h3>
+			  <p class="company">Ernst & Young Advisory Ltd. • December 2024 - May 2025 • Budapest</p>
+			  <p>I developed RAG-based chatbot applications for various corporate departments using .NET and React, along with Azure technologies. I also created other internal tools using ExcelScript, Power Platform, and Python to automate business processes and improve efficiency.</p>
 			</div>
 			<div class="experience-item">
-				<h3>Full Stack Developer</h3>
-				<p class="company">Startup Ventures • 2020 - 2022</p>
-				<p>Built scalable web applications from concept to deployment using modern tech stack.</p>
+			  <h3>Student Job</h3>
+			  <p class="company">Kofax-Recognita • June 2022 - August 2022 • Budapest</p>
+			  <p>I tested an optical character recognition (OCR) software at the company. My tasks included collecting scanned texts in foreign languages, uploading them into the software, and verifying whether the software correctly recognized the content (primarily in Hebrew).</p>
 			</div>
-		</section>
+		  </section>
 	</div>
 </div>
 
