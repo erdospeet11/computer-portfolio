@@ -6,73 +6,96 @@
 
 	<div class="projects-grid">
 		<div class="project-card">
-			<div class="project-image">🌐</div>
-			<div class="project-content">
-				<h3>E-Commerce Platform</h3>
-				<p>Full-stack e-commerce solution built with React, Node.js, and PostgreSQL</p>
-				<div class="tech-stack">
-					<span class="tech">React</span>
-					<span class="tech">Node.js</span>
-					<span class="tech">PostgreSQL</span>
-				</div>
-				<div class="project-links">
-					<button class="link-btn">Live Demo</button>
-					<button class="link-btn">GitHub</button>
-				</div>
+		  <div class="project-image">🧠</div>
+		  <div class="project-content">
+			<h3>conspiracy-board</h3>
+			<p>A TypeScript project exploring structured information linking and board logic.</p>
+			<div class="tech-stack">
+			  <span class="tech">TypeScript</span>
 			</div>
+			<div class="project-links">
+			  <button class="link-btn">Live Demo</button>
+			  <button onclick={() => window.open('https://github.com/erdospeet11/conspiracy-board', '_blank')} class="link-btn">GitHub</button>
+			</div>
+		  </div>
 		</div>
-
+	  
 		<div class="project-card">
-			<div class="project-image">📱</div>
-			<div class="project-content">
-				<h3>Task Management App</h3>
-				<p>Collaborative task management tool with real-time updates and team features</p>
-				<div class="tech-stack">
-					<span class="tech">Svelte</span>
-					<span class="tech">Socket.io</span>
-					<span class="tech">MongoDB</span>
-				</div>
-				<div class="project-links">
-					<button class="link-btn">Live Demo</button>
-					<button class="link-btn">GitHub</button>
-				</div>
+		  <div class="project-image">🌌</div>
+		  <div class="project-content">
+			<h3>the-void-engine</h3>
+			<p>A custom C++ game engine for experimental game development.</p>
+			<div class="tech-stack">
+			  <span class="tech">C++</span>
 			</div>
+			<div class="project-links">
+			  <button class="link-btn">Live Demo</button>
+			  <button onclick={() => window.open('https://github.com/erdospeet11/the-void-engine', '_blank')} class="link-btn">GitHub</button>
+			</div>
+		  </div>
 		</div>
-
+	  
 		<div class="project-card">
-			<div class="project-image">📊</div>
-			<div class="project-content">
-				<h3>Analytics Dashboard</h3>
-				<p>Real-time analytics dashboard with interactive charts and data visualization</p>
-				<div class="tech-stack">
-					<span class="tech">Vue.js</span>
-					<span class="tech">D3.js</span>
-					<span class="tech">Express</span>
-				</div>
-				<div class="project-links">
-					<button class="link-btn">Live Demo</button>
-					<button class="link-btn">GitHub</button>
-				</div>
+		  <div class="project-image">🪐</div>
+		  <div class="project-content">
+			<h3>cosmosjs-multiplayer</h3>
+			<p>Multiplayer JavaScript game with a cosmic theme and real-time communication.</p>
+			<div class="tech-stack">
+			  <span class="tech">JavaScript</span>
 			</div>
+			<div class="project-links">
+			  <button class="link-btn">Live Demo</button>
+			  <button onclick={() => window.open('https://github.com/erdospeet11/cosmosjs-multiplayer', '_blank')} class="link-btn">GitHub</button>
+			</div>
+		  </div>
 		</div>
-
+	  
 		<div class="project-card">
-			<div class="project-image">🎮</div>
-			<div class="project-content">
-				<h3>Card Game Suite</h3>
-				<p>Collection of classic card games built with JavaScript and Canvas API</p>
-				<div class="tech-stack">
-					<span class="tech">JavaScript</span>
-					<span class="tech">Canvas</span>
-					<span class="tech">WebSocket</span>
-				</div>
-				<div class="project-links">
-					<button class="link-btn">Play Now</button>
-					<button class="link-btn">GitHub</button>
-				</div>
+		  <div class="project-image">💾</div>
+		  <div class="project-content">
+			<h3>dbmc</h3>
+			<p>A C-based database management CLI tool for learning systems-level programming.</p>
+			<div class="tech-stack">
+			  <span class="tech">C</span>
 			</div>
+			<div class="project-links">
+			  <button class="link-btn">Live Demo</button>
+			  <button onclick={() => window.open('https://github.com/erdospeet11/dbmc', '_blank')} class="link-btn">GitHub</button>
+			</div>
+		  </div>
 		</div>
-	</div>
+	  
+		<div class="project-card">
+		  <div class="project-image">🏠</div>
+		  <div class="project-content">
+			<h3>homeinvasion</h3>
+			<p>A game project built with Godot and GDScript, featuring stealth and tension mechanics.</p>
+			<div class="tech-stack">
+			  <span class="tech">GDScript</span>
+			</div>
+			<div class="project-links">
+			  <button class="link-btn">Play Now</button>
+			  <button onclick={() => window.open('https://github.com/erdospeet11/homeinvasion', '_blank')} class="link-btn">GitHub</button>
+			</div>
+		  </div>
+		</div>
+	  
+		<div class="project-card">
+		  <div class="project-image">💻</div>
+		  <div class="project-content">
+			<h3>computer-portfolio</h3>
+			<p>Personal portfolio site built with Svelte showcasing programming projects and skills.</p>
+			<div class="tech-stack">
+			  <span class="tech">Svelte</span>
+			</div>
+			<div class="project-links">
+			  <button class="link-btn">Live Demo</button>
+			  <button onclick={() => window.open('https://github.com/erdospeet11/computer-portfolio', '_blank')} class="link-btn">GitHub</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  
 </div>
 
 <style>
