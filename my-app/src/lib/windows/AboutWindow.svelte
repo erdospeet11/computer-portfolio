@@ -26,8 +26,9 @@
 				<div class="skill-item">Svelte</div>
 				<div class="skill-item">Node.js</div>
 				<div class="skill-item">Python</div>
-				<div class="skill-item">PostgreSQL</div>
-				<div class="skill-item">MongoDB</div>
+				<div class="skill-item">C#</div>
+				<div class="skill-item">ASP .NET</div>
+				<div class="skill-item">Git</div>
 			</div>
 		</section>
 

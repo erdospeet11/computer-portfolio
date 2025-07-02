@@ -48,7 +48,7 @@
 <div class="taskbar">
 	<!-- Start Button -->
 	<button class="start-button" class:active={startMenuOpen} on:click={handleStartClick}>
-		<span class="windows-icon">⊞</span>
+		<span class="windows-icon">🚀</span>
 		Start
 	</button>
 

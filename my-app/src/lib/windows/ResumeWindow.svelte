@@ -12,7 +12,7 @@
 			const element = resumeContent;
 			const opt = {
 				margin: 1,
-				filename: 'John_Doe_Resume.pdf',
+				filename: 'Erdos_Peter_Zsombor_Resume.pdf',
 				image: { type: 'jpeg', quality: 0.98 },
 				html2canvas: { scale: 2, useCORS: true },
 				jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
@@ -40,47 +40,38 @@
 
 	<div class="resume-content" bind:this={resumeContent}>
 		<header class="resume-header-section">
-			<h1>John Doe</h1>
-			<p class="title">Full Stack Developer</p>
+			<h1>Erdős Péter Zsombor</h1>
+			<p class="title">Computer Science Student & Developer</p>
 			<div class="contact-info">
-				<span>john.doe@example.com</span>
+				<span>erdospeter@gmail.com</span>
 				<span>•</span>
-				<span>+1 (555) 123-4567</span>
+				<span>+36 30 576 7616</span>
 				<span>•</span>
-				<span>San Francisco, CA</span>
-				<span>•</span>
-				<span>linkedin.com/in/johndoe</span>
+				<span>Budapest, Hungary</span>
 			</div>
 		</header>
 
 		<section class="resume-section">
-			<h2>Professional Summary</h2>
+			<h2>Motivation & Personality</h2>
 			<p>
-				Experienced Full Stack Developer with 5+ years of expertise in building scalable web applications 
-				and leading development teams. Proficient in modern JavaScript frameworks, cloud technologies, 
-				and agile methodologies. Passionate about creating efficient solutions and mentoring junior developers.
+				Enthusiastic computer science student who primarily wants to develop their professional knowledge 
+				in various areas of programming. I take pride in being able to quickly learn new technologies 
+				and work efficiently in a team. In my free time, I engage in game development, which increasingly 
+				interests me, but I am open to other opportunities as well.
 			</p>
 		</section>
 
 		<section class="resume-section">
-			<h2>Technical Skills</h2>
-			<div class="skills-section">
-				<div class="skill-category">
-					<h3>Frontend</h3>
-					<p>React, Vue.js, Svelte, TypeScript, HTML5, CSS3, Sass, Tailwind CSS</p>
+			<h2>Education</h2>
+			<div class="education-item">
+				<div class="education-header">
+					<div>
+						<h3>BSc Computer Science</h3>
+						<p class="school">Eötvös Loránd University, Budapest</p>
+					</div>
+					<div class="duration">2021 - 2026</div>
 				</div>
-				<div class="skill-category">
-					<h3>Backend</h3>
-					<p>Node.js, Express, Python, Django, PHP, RESTful APIs, GraphQL</p>
-				</div>
-				<div class="skill-category">
-					<h3>Database</h3>
-					<p>PostgreSQL, MongoDB, MySQL, Redis, Elasticsearch</p>
-				</div>
-				<div class="skill-category">
-					<h3>Tools & Technologies</h3>
-					<p>Git, Docker, AWS, CI/CD, Jest, Webpack, Linux</p>
-				</div>
+				<p>Focus on programming, software development, and computer science fundamentals</p>
 			</div>
 		</section>
 
@@ -90,72 +81,98 @@
 			<div class="experience-item">
 				<div class="experience-header">
 					<div>
-						<h3>Senior Full Stack Developer</h3>
-						<p class="company">Tech Solutions Inc.</p>
+						<h3>Digital Solutions Intern</h3>
+						<p class="company">Ernst & Young Advisory Kft., Budapest</p>
 					</div>
-					<div class="duration">2022 - Present</div>
+					<div class="duration">Dec 2024 - May 2025</div>
 				</div>
 				<ul>
-					<li>Led development of microservices architecture serving 100k+ daily active users</li>
-					<li>Mentored team of 4 junior developers and conducted code reviews</li>
-					<li>Implemented CI/CD pipelines reducing deployment time by 60%</li>
-					<li>Collaborated with product team to define technical requirements</li>
+					<li>Developed RAG-based chatbot applications for various corporate departments using .NET and React</li>
+					<li>Worked with Azure technologies to implement cloud-based solutions</li>
+					<li>Created internal tools using ExcelScript, Power Platform and Python</li>
+					<li>Focused on automating business processes and improving efficiency</li>
 				</ul>
 			</div>
 
 			<div class="experience-item">
 				<div class="experience-header">
 					<div>
-						<h3>Full Stack Developer</h3>
-						<p class="company">Startup Ventures</p>
+						<h3>Student Worker</h3>
+						<p class="company">Kofax-Recognition, Budapest</p>
 					</div>
-					<div class="duration">2020 - 2022</div>
+					<div class="duration">Jun 2022 - Aug 2022</div>
 				</div>
 				<ul>
-					<li>Built responsive web applications using React and Node.js</li>
-					<li>Designed and implemented RESTful APIs and database schemas</li>
-					<li>Optimized application performance improving load times by 40%</li>
-					<li>Participated in agile development process and sprint planning</li>
-				</ul>
-			</div>
-
-			<div class="experience-item">
-				<div class="experience-header">
-					<div>
-						<h3>Frontend Developer</h3>
-						<p class="company">Digital Agency Co.</p>
-					</div>
-					<div class="duration">2019 - 2020</div>
-				</div>
-				<ul>
-					<li>Developed responsive websites for various clients using modern frameworks</li>
-					<li>Collaborated with designers to implement pixel-perfect UI components</li>
-					<li>Maintained and updated existing web applications</li>
+					<li>Tested optical character recognition (OCR) software</li>
+					<li>Collected scanned texts in foreign languages for testing purposes</li>
+					<li>Uploaded documents to software and verified text recognition accuracy</li>
+					<li>Primarily worked with Hebrew language text recognition</li>
 				</ul>
 			</div>
 		</section>
 
 		<section class="resume-section">
-			<h2>Education</h2>
+			<h2>Projects</h2>
+			
+			<div class="experience-item">
+				<div class="experience-header">
+					<div>
+						<h3>Multiplayer Bomberman Game</h3>
+						<p class="company">University Course Project</p>
+					</div>
+				</div>
+				<ul>
+					<li>Developed local multiplayer game with 2 teammates as part of university coursework</li>
+					<li>Built using Go programming language and Ebiten framework</li>
+					<li>Implemented game mechanics, multiplayer functionality, and user interface</li>
+				</ul>
+			</div>
+
+			<div class="experience-item">
+				<div class="experience-header">
+					<div>
+						<h3>Arena Survival Web Game</h3>
+						<p class="company">Bachelor's Thesis Project</p>
+					</div>
+				</div>
+				<ul>
+					<li>Created web-based arena survival game for bachelor's thesis</li>
+					<li>Developed using TypeScript and Phaser 3 framework</li>
+					<li>Integrated MySQL database for player data storage</li>
+					<li>Implemented user authentication and game mechanics</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="resume-section">
+			<h2>Technical Skills</h2>
+			<div class="skills-section">
+				<div class="skill-category">
+					<h3>Programming Languages</h3>
+					<p>Go, Python, C#/ASP.NET, JavaScript/TypeScript, GDScript</p>
+				</div>
+				<div class="skill-category">
+					<h3>Technologies & Frameworks</h3>
+					<p>React, Azure Cloud Services, Git, HTML/CSS, Microsoft Power Platform, Phaser 3, Ebiten</p>
+				</div>
+				<div class="skill-category">
+					<h3>Methodologies & Skills</h3>
+					<p>Agile Development, Team Collaboration, Test-Driven Development, Documentation</p>
+				</div>
+				<div class="skill-category">
+					<h3>Languages & Interests</h3>
+					<p>English (B2), Game Development, 3D Modeling, Rock Climbing</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="resume-section">
+			<h2>Additional Information</h2>
 			<div class="education-item">
-				<div class="education-header">
-					<div>
-						<h3>Bachelor of Science in Computer Science</h3>
-						<p class="school">University of California, San Francisco</p>
-					</div>
-					<div class="duration">2015 - 2019</div>
-				</div>
-				<p>Graduated Magna Cum Laude • GPA: 3.8/4.0</p>
+				<p><strong>Location:</strong> Gödöllői utca 165. III/7., 1141 Budapest, Hungary</p>
+				<p><strong>Availability:</strong> Open to internships, part-time and full-time opportunities</p>
+				<p><strong>Special Interests:</strong> Game development, web applications, cloud technologies</p>
 			</div>
-		</section>
-
-		<section class="resume-section">
-			<h2>Certifications</h2>
-			<ul class="certifications-list">
-				<li>AWS Certified Solutions Architect (2023)</li>
-				<li>Google Cloud Professional Developer (2022)</li>
-				<li>Certified Scrum Master (2021)</li>
-			</ul>
 		</section>
 	</div>
 </div>
@@ -330,17 +347,6 @@
 		color: #333;
 		font-size: 16px;
 		font-weight: 600;
-	}
-
-	.certifications-list {
-		margin: 0;
-		padding-left: 20px;
-	}
-
-	.certifications-list li {
-		margin-bottom: 5px;
-		color: #555;
-		font-size: 14px;
 	}
 
 	@media print {
